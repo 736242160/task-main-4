@@ -1,0 +1,22 @@
+{
+  "room_types": [
+    {"name": "标准间", "rooms": 2, "maintenance": [["2026-10-06", "2026-10-08"]]},
+    {"name": "大床房", "rooms": 1}
+  ],
+  "bookings": [
+    {"order": "B1", "room_type": "标准间", "checkin": "2026-10-01", "checkout": "2026-10-03"},
+    {"order": "B2", "room_type": "标准间", "checkin": "2026-10-01", "checkout": "2026-10-04"},
+    {"order": "B3", "room_type": "标准间", "checkin": "2026-10-02", "checkout": "2026-10-03"},
+    {"order": "B4", "room_type": "大床房", "checkin": "2026-10-01", "checkout": "2026-10-02"},
+    {"order": "B5", "room_type": "豪华套房", "checkin": "2026-10-01", "checkout": "2026-10-02"},
+    {"order": "B6", "room_type": "标准间", "checkin": "2026-10-06", "checkout": "2026-10-07"}
+  ],
+  "changes": [
+    {"action": "cancel", "order": "B2"},
+    {"action": "cancel", "order": "B2"},
+    {"action": "cancel", "order": "B404"},
+    {"action": "reschedule", "order": "B1", "checkin": "2026-10-02", "checkout": "2026-10-05"},
+    {"action": "reschedule", "order": "B4", "checkin": "2026-10-01", "checkout": "2026-10-03"},
+    {"action": "reschedule", "order": "B1", "checkin": "2026-10-05", "checkout": "2026-10-08"}
+  ]
+}
