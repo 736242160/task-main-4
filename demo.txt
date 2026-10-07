@@ -1,0 +1,12 @@
+# --- 事件定义 ---
+DEF 1 deposit alice 100            # alice 开户入账
+DEF 2 deposit bob 20 DEP 1         # 依赖 1
+DEF 3 transfer alice bob 40 DEP 2  # 转账
+DEF 4 reverse 3 DEP 3              # 冲正事件 3
+DEF 5 deposit carol 50 DEP 7       # 前置 7 永远不到 -> 悬挂
+DEF 8 transfer alice ghost 10 DEP 1  # 引用不存在账户
+DEF 9 deposit dave 5 DEP 10        # 成环 9 <-> 10
+DEF 10 deposit erin 5 DEP 9
+# --- 到达顺序（乱序、含重复、缺少 7） ---
+STREAM 4 1 10 3 9 2 8 1
+STREAM 5
